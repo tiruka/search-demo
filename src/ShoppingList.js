@@ -16,7 +16,7 @@ import CommentIcon from '@mui/icons-material/Comment';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 
-export default function ShoppingList(){
+export default function ShoppingList({ color }){
   const [checked, setChecked] = React.useState([0]);
 
   const handleToggle = (value) => () => {
@@ -31,33 +31,40 @@ export default function ShoppingList(){
 
     setChecked(newChecked);
   };
+
+  const itemList = [
+    "さぬきうどん 讃岐本格うどんです!香川県で...",
+    "化粧品",
+    "fooobar"
+  ];
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-        {[0, 1, 2, 3].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', backgroundColor: "#eeccb6"}}>
+        {itemList.map((value, index) => {
+        const labelId = `checkbox-list-label-${index}`;
         return (
-          <ListItem
-            key={value}
-            secondaryAction={
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            }
-            disablePadding
-          >
-            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-              <ListItemIcon>
+          <div>
+            <ListItem
+              key={value}
+              secondaryAction={
+                <IconButton edge="end" aria-label="comments">
+                  <CommentIcon />
+                </IconButton>
+              }
+              disablePadding
+            >
+              <ListItemButton role={undefined} onClick={handleToggle(index)} dense color={color}>
                 <Checkbox
                   edge="start"
-                  checked={checked.indexOf(value) !== -1}
+                  checked={checked.indexOf(index) !== -1}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
-            </ListItemButton>
-          </ListItem>
+                <ListItemText id={labelId} primary={`${value}`} />
+              </ListItemButton>
+            </ListItem>
+            <Divider variant="inset" component="li" />
+          </div>
         );
       })}
     </List>

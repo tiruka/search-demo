@@ -63,11 +63,9 @@ export default function Index() {
           divider={<Divider orientation="vertical" flexItem />}
           spacing={2}
         >
-        <ThemeProvider theme={theme}>
-          <LineChatList color="line" />
-          <ViewWebPageList color="webpage" />
-          <ShoppingList color="shopping" />
-        </ThemeProvider>
+        <LineChatList />
+        <ViewWebPageList />
+        <ShoppingList />
       </Stack>
       </Box>
     </Container>

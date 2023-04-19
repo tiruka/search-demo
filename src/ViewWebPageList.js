@@ -31,33 +31,40 @@ export default function ViewWebPageList(){
 
     setChecked(newChecked);
   };
+
+  const itemList = [
+    "さぬきうどん 讃岐本格うどんです!香川県で...",
+    "化粧品",
+    "fooobar"
+  ];
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-        {[0, 1, 2, 3].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', backgroundColor: "#b2dcdf"}}>
+        {itemList.map((value, index) => {
+        const labelId = `checkbox-list-label-${index}`;
         return (
-          <ListItem
-            key={value}
-            secondaryAction={
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            }
-            disablePadding
-          >
-            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-              <ListItemIcon>
+          <div>
+            <ListItem
+              key={value}
+              secondaryAction={
+                <IconButton edge="end" aria-label="comments">
+                  <CommentIcon />
+                </IconButton>
+              }
+              disablePadding
+            >
+              <ListItemButton role={undefined} onClick={handleToggle(index)} dense>
                 <Checkbox
                   edge="start"
-                  checked={checked.indexOf(value) !== -1}
+                  checked={checked.indexOf(index) !== -1}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
-            </ListItemButton>
-          </ListItem>
+                <ListItemText id={labelId} primary={`${value}`} />
+              </ListItemButton>
+            </ListItem>
+            <Divider variant="inset" component="li" />
+          </div>
         );
       })}
     </List>

@@ -8,7 +8,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import CommentIcon from '@mui/icons-material/Comment';
-
+import Divider from '@mui/material/Divider';
+import ListSubheader from '@mui/material/ListSubheader';
 
 export default function LineChatList(){
   const [checked, setChecked] = React.useState([0]);
@@ -25,11 +26,26 @@ export default function LineChatList(){
 
     setChecked(newChecked);
   };
+
+  const itemList = [
+    "さぬきうどん 讃岐本格うどんです!香川県で...",
+    "化粧品",
+    "fooobar"
+  ];
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-        {[0, 1, 2, 3].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
-        return (
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}
+      component="nav"
+      aria-labelledby="nested-list-subheader"
+      subheader={
+        <ListSubheader id="nested-list-subheader" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', color: '#ffffff', backgroundColor: "#11cb5f"}}>
+          LINEでの直近会話
+        </ListSubheader>
+      }
+    >
+      {itemList.map((value, index) => {
+      const labelId = `checkbox-list-label-${index}`;
+      return (
+        <div>
           <ListItem
             key={value}
             secondaryAction={
@@ -39,21 +55,21 @@ export default function LineChatList(){
             }
             disablePadding
           >
-            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+            <ListItemButton role={undefined} onClick={handleToggle(index)} dense>
+              <Checkbox
+                edge="start"
+                checked={checked.indexOf(index) !== -1}
+                tabIndex={-1}
+                disableRipple
+                inputProps={{ 'aria-labelledby': labelId }}
+              />
+              <ListItemText id={labelId} primary={`${value}`} />
             </ListItemButton>
           </ListItem>
-        );
-      })}
-    </List>
+          <Divider variant="inset" component="li" />
+        </div>
+      );
+    })}
+  </List>
   )
 }
