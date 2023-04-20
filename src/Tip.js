@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
 import SvgIcon from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
 
@@ -13,9 +12,9 @@ function LightBulbIcon(props) {
 
 export default function ProTip() {
   return (
-    <Typography sx={{ mt: 6, mb: 3 }} color="text.secondary">
+    <Typography sx={{ mt: 1, mb: 3 }} color="text.secondary">
       <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-      Tip: Do you need your recent context? Choose your recent action!
+      最近のYサービスでのアクティビティを反映しますか？選択して反映ボタンを押してください! そこからさらに検索できます。
     </Typography>
   );
 }
