@@ -27,7 +27,7 @@ import Grid from '@mui/material/Grid';
 import Backdrop from '@mui/material/Backdrop';
 import TextField from '@mui/material/TextField';
 import CircularProgress from '@mui/material/CircularProgress';
-import Link from 'next/link';
+import ResultCards from '../src/ResultCards';
 
 const summary = `LINEの要約: 友達と旅行に行く予定を立てています。7月の中旬から下旬にかけて四国に旅行に行くことを計画しています。\n
 閲覧ページの要約: 香川県のうどんの人気スポットや、高知県の人気スポット、お祭りに関連するページを閲覧しています。\n
@@ -37,6 +37,7 @@ const summary = `LINEの要約: 友達と旅行に行く予定を立てていま
 export default function Index() {
   const [context, setContext] = React.useState("");
   const [open, setOpen] = React.useState(false);
+  const [searched, setSearched] = React.useState(false);
   const refrectContext = () => {
     setOpen(true);
     setTimeout(() => setOpen(false), 1000);
@@ -45,6 +46,11 @@ export default function Index() {
   const inputText = (e) => {
     setContext(e.target.value);
   }
+  const search = () => {
+    setOpen(true);
+    setTimeout(() => setOpen(false), 1000);
+    setTimeout(() => setSearched(true), 1000);
+  };
 
   return (
     <Container maxWidth="lg">
@@ -69,11 +75,9 @@ export default function Index() {
             value={context}
             onChange={(event) => inputText(event)}
           />
-          <Link href="/result">
-            <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-              <SearchIcon />
-            </IconButton>
-          </Link>
+          <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={search}>
+            <SearchIcon />
+          </IconButton>
         <Tip />
         <Grid container alignItems="center" justify="center" direction="column" >
           <Grid item xs={8}>
