@@ -28,6 +28,8 @@ import Backdrop from '@mui/material/Backdrop';
 import TextField from '@mui/material/TextField';
 import CircularProgress from '@mui/material/CircularProgress';
 import ResultCards from '../src/ResultCards';
+import ChatCards from '../src/ChatCards';
+
 
 const summary = `LINEの要約: 友達と旅行に行く予定を立てています。7月の中旬から下旬にかけて四国に旅行に行くことを計画しています。\n
 閲覧ページの要約: 香川県のうどんの人気スポットや、高知県の人気スポット、お祭りに関連するページを閲覧しています。\n
@@ -37,7 +39,7 @@ const summary = `LINEの要約: 友達と旅行に行く予定を立てていま
 export default function Index() {
   const [context, setContext] = React.useState("");
   const [open, setOpen] = React.useState(false);
-  const [searched, setSearched] = React.useState(false);
+  const [status, setStatus] = React.useState("history");
   const refrectContext = () => {
     setOpen(true);
     setTimeout(() => setOpen(false), 1000);
@@ -46,12 +48,11 @@ export default function Index() {
   const inputText = (e) => {
     setContext(e.target.value);
   }
-  const search = () => {
+  const action = (value) => {
     setOpen(true);
     setTimeout(() => setOpen(false), 1000);
-    setTimeout(() => setSearched(true), 1000);
+    setTimeout(() => setStatus(value), 1000);
   };
-
   return (
     <Container maxWidth="lg">
       <Backdrop
@@ -77,15 +78,15 @@ export default function Index() {
           />
           <Grid container alignItems="center" justify="center" direction="column" sx={{ mt: 1, mb: 3 }} >
             <Grid item xs={12}>
-              <Button variant="contained" endIcon={<SearchIcon />} onClick={search} sx={{ m: '2rem' }}>
+              <Button variant="contained" endIcon={<SearchIcon />} onClick={() => action("search")} sx={{ m: '2rem' }}>
                 検索する
               </Button>
-              <Button variant="outlined" endIcon={<SearchIcon />} onClick={search} sx={{ m: '2rem' }}>
+              <Button variant="outlined" endIcon={<SearchIcon />} onClick={() => action("chat")} sx={{ m: '2rem' }}>
                 チャット
               </Button>
             </Grid>
           </Grid>
-          {searched ? (<ResultCards/>) : (
+          {status !== "history" ? (status === "search" ? <ResultCards/> : <ChatCards />) : (
             <div>
               <Tip />
               <Grid container alignItems="center" justify="center" direction="column" >
