@@ -10,8 +10,8 @@ import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 export default function ResultCards() {
   const cardData = [
-    { title: 'Card 1', content: 'Content for card 1' },
-    { title: 'Card 2', content: 'Content for card 2' },
+    { title: '四国への旅行について検索結果' },
+    { title: '旅行支度のお買い物についての検索結果'},
     { title: 'Card 3', content: 'Content for card 3' },
     { title: 'Card 4', content: 'Content for card 4' },
     { title: 'Card 5', content: 'Content for card 5' },

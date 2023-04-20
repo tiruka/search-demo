@@ -75,28 +75,39 @@ export default function Index() {
             value={context}
             onChange={(event) => inputText(event)}
           />
-          <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={search}>
-            <SearchIcon />
-          </IconButton>
-        <Tip />
-        <Grid container alignItems="center" justify="center" direction="column" >
-          <Grid item xs={8}>
-          <Typography sx={{ mt: 1, mb: 3 }} color="text.secondary">
-          <Button size="large" variant="outlined" onClick={refrectContext}>
-            選択した内容の要約をコンテキストとして反映する
-          </Button>
-          </Typography>
+          <Grid container alignItems="center" justify="center" direction="column" sx={{ mt: 1, mb: 3 }} >
+            <Grid item xs={12}>
+              <Button variant="contained" endIcon={<SearchIcon />} onClick={search} sx={{ m: '2rem' }}>
+                検索する
+              </Button>
+              <Button variant="outlined" endIcon={<SearchIcon />} onClick={search} sx={{ m: '2rem' }}>
+                チャット
+              </Button>
+            </Grid>
           </Grid>
-        </Grid>
-        <Stack
-          direction="row"
-          divider={<Divider orientation="vertical" flexItem />}
-          spacing={2}
-        >
-        <LineChatList />
-        <ViewWebPageList />
-        <ShoppingList />
-      </Stack>
+          {searched ? (<ResultCards/>) : (
+            <div>
+              <Tip />
+              <Grid container alignItems="center" justify="center" direction="column" >
+                <Grid item xs={8}>
+                <Typography sx={{ mt: 1, mb: 3 }} color="text.secondary">
+                <Button size="large" variant="outlined" onClick={refrectContext}>
+                  選択した内容の要約をコンテキストとして反映する
+                </Button>
+                </Typography>
+                </Grid>
+              </Grid>
+              <Stack
+                direction="row"
+                divider={<Divider orientation="vertical" flexItem />}
+                spacing={2}
+              >
+              <LineChatList />
+              <ViewWebPageList />
+              <ShoppingList />
+            </Stack>
+          </div>
+        )}
       </Box>
     </Container>
   );
