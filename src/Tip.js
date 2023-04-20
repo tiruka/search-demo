@@ -15,7 +15,7 @@ export default function ProTip() {
   return (
     <Typography sx={{ mt: 6, mb: 3 }} color="text.secondary">
       <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-      Pro tip: Do you need your recent context? Choose your recent action!
+      Tip: Do you need your recent context? Choose your recent action!
     </Typography>
   );
 }
