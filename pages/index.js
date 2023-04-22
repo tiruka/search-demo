@@ -104,8 +104,8 @@ export default function Index() {
                 spacing={2}
               >
               <LineChatList />
-              <ViewWebPageList />
-              <ShoppingList />
+              {/* <ViewWebPageList />
+              <ShoppingList /> */}
             </Stack>
           </div>
         )}

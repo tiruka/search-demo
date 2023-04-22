@@ -12,7 +12,7 @@ import Divider from '@mui/material/Divider';
 import ListSubheader from '@mui/material/ListSubheader';
 
 export default function LineChatList(){
-  const [checked, setChecked] = React.useState([0]);
+  const [checked, setChecked] = React.useState([]);
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -45,7 +45,7 @@ export default function LineChatList(){
       {itemList.map((value, index) => {
       const labelId = `checkbox-list-label-${index}`;
       return (
-        <div>
+        <div key={index}>
           <ListItem
             key={value}
             secondaryAction={
