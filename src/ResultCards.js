@@ -7,6 +7,8 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
+
 
 export default function ResultCards() {
   const cardData = [
@@ -28,25 +30,37 @@ export default function ResultCards() {
   ];
   const colors = ["#4169e1", "#4169e1", "#dc143c"]
   return (
-    <Grid container spacing={2}>
-      {cardData.map((card, index) => (
-        <Grid item xs={12} sm={4} key={index}>
-          {[0, 1, 2].includes(index) ? (
-          <Card sx={{ color: "#ffffff", backgroundColor: colors[index] }}>
-            <CardContent>
-              <Typography variant="subtitle1">{card.title}</Typography>
-            </CardContent>
-          </Card>
-          ) : (
-            <Card>
-            <CardContent>
-              <Typography variant="h5">{card.title}</Typography>
-              <Typography variant="body2">{card.content}</Typography>
-            </CardContent>
-          </Card>
-          )}
-        </Grid>
-      ))}
-    </Grid>
+    <>
+      <TextField
+        id="standard-multiline-static"
+        label="追加のチャット"
+        fullWidth
+        multiline
+        maxRows={10}
+        placeholder="追加条件でもっと情報が必要ですか？"
+        variant="outlined"
+        sx={{ mt: 4, mb: 3 }}
+      />
+      <Grid container spacing={2}>
+        {cardData.map((card, index) => (
+          <Grid item xs={12} sm={4} key={index}>
+            {[0, 1, 2].includes(index) ? (
+            <Card sx={{ color: "#ffffff", backgroundColor: colors[index] }}>
+              <CardContent>
+                <Typography variant="subtitle1">{card.title}</Typography>
+              </CardContent>
+            </Card>
+            ) : (
+              <Card>
+              <CardContent>
+                <Typography variant="h5">{card.title}</Typography>
+                <Typography variant="body2">{card.content}</Typography>
+              </CardContent>
+            </Card>
+            )}
+          </Grid>
+        ))}
+      </Grid>
+    </>
   );
 }

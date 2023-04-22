@@ -44,16 +44,6 @@ export default function ChatCards() {
           </Typography>
         </CardContent>
       </Card>
-      <TextField
-        id="standard-multiline-static"
-        label="追加のチャット"
-        fullWidth
-        multiline
-        maxRows={10}
-        placeholder="追加条件でもっと情報が必要ですか？"
-        variant="outlined"
-        sx={{ mt: 4, mb: 3 }}
-      />
     </Grid>
   );
 }

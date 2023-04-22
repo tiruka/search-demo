@@ -89,14 +89,11 @@ export default function Index() {
           <Grid container alignItems="center" justify="center" direction="column" sx={{ mt: 1, mb: 3 }} >
             <Grid item xs={12}>
               <Button variant="contained" endIcon={<SearchIcon />} onClick={() => action("search")} sx={{ m: '2rem' }}>
-                検索する
-              </Button>
-              <Button variant="outlined" endIcon={<SearchIcon />} onClick={() => action("chat")} sx={{ m: '2rem' }}>
-                チャット
+                提案を探す
               </Button>
             </Grid>
           </Grid>
-          {status !== "history" ? (status === "search" ? <ResultCards/> : <ChatCards />) : (
+          {status !== "history" ? ( <><ChatCards /><ResultCards/></>) : (
             <div>
               <Tip />
               <Grid container alignItems="center" justify="center" direction="column" >
