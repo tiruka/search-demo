@@ -14,7 +14,7 @@ export default function ProTip() {
   return (
     <Typography sx={{ mt: 1, mb: 3 }} color="text.secondary">
       <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-      最近のYサービスでのアクティビティを反映しますか？選択して反映ボタンを押してください! そこからさらに検索できます。
+      最近のYサービスでのアクティビティを反映しますか？選択して反映ボタンを押してください!
     </Typography>
   );
 }
