@@ -17,7 +17,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-export default function MoneyList(){
+export default function WebPageList(){
   const [checked, setChecked] = React.useState([]);
 
   const handleToggle = (value) => () => {
@@ -33,16 +33,18 @@ export default function MoneyList(){
     setChecked(newChecked);
   };
   const titles = [
-    "中国、人口減少が現実味を帯びる",
-    "京都・清水寺が新たなライトアップイベントを開催",
-    "京都・伏見稲荷大社、参拝客数が過去最多を記録",
-    "日本、再生可能エネルギーの導入目標を引き上げ"
+    "ホテルの予約と宿泊先選びのポイント",
+    "旅行前に必要な準備リスト",
+    "オンライン英会話の比較ランキング",
+    "最新のスマートフォンランキング2023年版",
+    "ホームセキュリティの強化方法"
   ]
   const itemList = [
-    "中国政府は、人口減少が現実味を帯びていると発表した。これまで一人っ子政策を推進していたため、高齢化が進む中、若年層の生育率低下が進んでいるためである。",
-    "京都市内の観光名所、清水寺が新たなライトアップイベントを開催することが発表された。夜間には幻想的なライトアップが施され、新しい観光スポットとして注目を集めている。",
-    "京都市内の観光名所、伏見稲荷大社では、今年の正月に参拝客数が過去最多を記録した。",
-    "日本政府は、再生可能エネルギーの導入目標を引き上げることを決定した。2050年までにCO2排出量を実質ゼロにするため、太陽光や風力発電などの再生可能エネルギー比率を既存の目標を大幅に上回る水準に引き上げる。"
+    "・安くて快適なホテルを見つけるためのアドバイス\n・各ホテルのサービスや設備の比較表\n・旅行者の口コミや評価の情報",
+    "旅行前に持っておくべきアイテムのリスト\n・パッキングのコツと荷造りのポイント\n・旅行保険や現地通貨の手配についてのアドバイス",
+    "オンライン英会話スクールの特徴比較表\n・各スクールの評価と口コミのまとめ\n・キャンペーン情報と割引クーポンの一覧",
+    "スマートフォンの性能比較表とランキング\n・各スマートフォンの特徴と利点の紹介\n・ユーザーからの評価とレビューのまとめ",
+    "家庭のセキュリティ対策についてのアドバイス\n・防犯カメラやセキュリティシステムの選び方と設置のポイント\n・防犯対策グッズの紹介と比較表"
   ];
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}
@@ -50,7 +52,7 @@ export default function MoneyList(){
       aria-labelledby="nested-list-subheader"
       subheader={
         <ListSubheader id="nested-list-subheader" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', color: '#ffffff', backgroundColor: "#dc143c"}}>
-          ポイント・クーポン
+          訪問したウェブページ
         </ListSubheader>
       }
     >
@@ -77,10 +79,10 @@ export default function MoneyList(){
               />
             <Card sx={{ minWidth: 275 }}>
               <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
                   「{titles[index]}」
                 </Typography>
-                <Typography sx={{ mb: 1.5 }}>
+                <Typography sx={{ fontSize: 14, mb: 1.5 }}>
                   {value}
                 </Typography>
               </CardContent>

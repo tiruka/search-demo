@@ -77,10 +77,10 @@ export default function NewsList(){
               />
             <Card sx={{ minWidth: 275 }}>
               <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
                   「{titles[index]}」
                 </Typography>
-                <Typography sx={{ mb: 1.5 }}>
+                <Typography sx={{ fontSize: 14, mb: 1.5 }}>
                   {value}
                 </Typography>
               </CardContent>

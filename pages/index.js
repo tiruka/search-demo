@@ -21,7 +21,7 @@ import Divider from '@mui/material/Divider';
 import Copyright from '../src/Copyright';
 import NewsList from '../src/NewsList';
 import ChatList from '../src/ChatList';
-import MoneyList from '../src/MoneyList';
+import WebPageList from '../src/WebPageList';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Backdrop from '@mui/material/Backdrop';
@@ -105,7 +105,7 @@ export default function Index() {
               >
               <ChatList />
               <NewsList />
-              <MoneyList />
+              <WebPageList />
             </Stack>
           </div>
         )}
