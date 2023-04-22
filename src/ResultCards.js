@@ -26,12 +26,13 @@ export default function ResultCards() {
     { title: '京都行くなら新幹線 - 全国旅行支援適用でおトクに', content: 'スペシャルプライスで旅行プランをご用意！おトクに新幹線旅行に出かけよう！' },
     { title: 'Y地図サービス', content: '旅行の計画に地図と電車を確認しましょう' },
   ];
+  const colors = ["#4169e1", "#4169e1", "#dc143c"]
   return (
     <Grid container spacing={2}>
       {cardData.map((card, index) => (
         <Grid item xs={12} sm={4} key={index}>
           {[0, 1, 2].includes(index) ? (
-          <Card sx={{ color: "#ffffff", backgroundColor: "#dc143c" }}>
+          <Card sx={{ color: "#ffffff", backgroundColor: colors[index] }}>
             <CardContent>
               <Typography variant="subtitle1">{card.title}</Typography>
             </CardContent>
@@ -39,7 +40,7 @@ export default function ResultCards() {
           ) : (
             <Card>
             <CardContent>
-              <Typography variant="body1">{card.title}</Typography>
+              <Typography variant="h5">{card.title}</Typography>
               <Typography variant="body2">{card.content}</Typography>
             </CardContent>
           </Card>
