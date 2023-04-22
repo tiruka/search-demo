@@ -19,9 +19,9 @@ import CommentIcon from '@mui/icons-material/Comment';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import Copyright from '../src/Copyright';
-import ViewWebPageList from '../src/ViewWebPageList';
-import LineChatList from '../src/LineChatList';
-import ShoppingList from '../src/ShoppingList';
+import NewsList from '../src/NewsList';
+import ChatList from '../src/ChatList';
+import MoneyList from '../src/MoneyList';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Backdrop from '@mui/material/Backdrop';
@@ -31,7 +31,7 @@ import ResultCards from '../src/ResultCards';
 import ChatCards from '../src/ChatCards';
 
 
-const summary = `LINEの要約: 友達と旅行に行く予定を立てています。7月の中旬から下旬にかけて四国に旅行に行くことを計画しています。\n
+const summary = `チャットの要約: 友達と旅行に行く予定を立てています。7月の中旬から下旬にかけて四国に旅行に行くことを計画しています。\n
 閲覧ページの要約: 香川県のうどんの人気スポットや、高知県の人気スポット、お祭りに関連するページを閲覧しています。\n
 ショッピングの要約: 化粧品や。\n
 `
@@ -103,9 +103,9 @@ export default function Index() {
                 divider={<Divider orientation="vertical" flexItem />}
                 spacing={2}
               >
-              <LineChatList />
-              {/* <ViewWebPageList />
-              <ShoppingList /> */}
+              <ChatList />
+              <NewsList />
+              <MoneyList />
             </Stack>
           </div>
         )}

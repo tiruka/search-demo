@@ -17,7 +17,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-export default function LineChatList(){
+export default function NewsList(){
   const [checked, setChecked] = React.useState([]);
 
   const handleToggle = (value) => () => {
@@ -32,19 +32,25 @@ export default function LineChatList(){
 
     setChecked(newChecked);
   };
-  const people = ["A", "B", "C"]
+  const titles = [
+    "中国、人口減少が現実味を帯びる",
+    "京都・清水寺が新たなライトアップイベントを開催",
+    "京都・伏見稲荷大社、参拝客数が過去最多を記録",
+    "日本、再生可能エネルギーの導入目標を引き上げ"
+  ]
   const itemList = [
-    "Aさんとあなた天気がいいことに話して、Aさんはカフェでのバイトについて話した。あなたは会議があることを話し、Aさんはバイトが終わったら一緒に食事に行こうと提案した。",
-    "Bさんとあなたは健康の話題で会話した。あなたは最近運動をしていることを話し、Bさんは運動不足で太ってきていることを話した。あなたは甲と一緒に運動しようと提案し、場所を探すといった。",
-    "あなは旅行に行きたいと思っていることを話し、Cさんは京都をおすすめした。あなたは5日間くらいの滞在を考え、ホテルや服装について質問した。Bさんは京都駅周辺にはたくさんのホテルがあることをアドバイスした"
+    "中国政府は、人口減少が現実味を帯びていると発表した。これまで一人っ子政策を推進していたため、高齢化が進む中、若年層の生育率低下が進んでいるためである。",
+    "京都市内の観光名所、清水寺が新たなライトアップイベントを開催することが発表された。夜間には幻想的なライトアップが施され、新しい観光スポットとして注目を集めている。",
+    "京都市内の観光名所、伏見稲荷大社では、今年の正月に参拝客数が過去最多を記録した。",
+    "日本政府は、再生可能エネルギーの導入目標を引き上げることを決定した。2050年までにCO2排出量を実質ゼロにするため、太陽光や風力発電などの再生可能エネルギー比率を既存の目標を大幅に上回る水準に引き上げる。"
   ];
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={
-        <ListSubheader id="nested-list-subheader" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', color: '#ffffff', backgroundColor: "#11cb5f"}}>
-          LINEでの会話
+        <ListSubheader id="nested-list-subheader" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', color: '#ffffff', backgroundColor: "#00bfff"}}>
+          Y 記事
         </ListSubheader>
       }
     >
@@ -72,7 +78,7 @@ export default function LineChatList(){
             <Card sx={{ minWidth: 275 }}>
               <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                  {people[index]}さんとの最近の会話
+                  「{titles[index]}」
                 </Typography>
                 <Typography sx={{ mb: 1.5 }}>
                   {value}
