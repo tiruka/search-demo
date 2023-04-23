@@ -3,22 +3,9 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Tip from '../src/Tip';
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import CommentIcon from '@mui/icons-material/Comment';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
-import Copyright from '../src/Copyright';
 import NewsList from '../src/NewsList';
 import ChatList from '../src/ChatList';
 import WebPageList from '../src/WebPageList';
@@ -36,6 +23,8 @@ const summary = `【チャットの要約】:\n・旅行に行く計画を立て
 【閲覧記事の要約】:
 ・京都市内の観光名所、清水寺が新たなライトアップイベントを開催。
 ・箱根彫刻の森美術館がリニューアルオープン。
+
+上記を考慮してください。
 `
 
 // 【ウェブページの要約】:
