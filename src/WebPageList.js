@@ -33,26 +33,22 @@ export default function WebPageList(){
     setChecked(newChecked);
   };
   const titles = [
-    "ホテルの予約と宿泊先選びのポイント",
-    "旅行前に必要な準備リスト",
-    "オンライン英会話の比較ランキング",
-    "最新のスマートフォンランキング2023年版",
-    "ホームセキュリティの強化方法"
+    "XXX",
+    "YYY",
+    "ZZZ"
   ]
   const itemList = [
-    "・安くて快適なホテルを見つけるためのアドバイス\n・各ホテルのサービスや設備の比較表\n・旅行者の口コミや評価の情報",
-    "・旅行前に持っておくべきアイテムのリスト\n・パッキングのコツと荷造りのポイント\n・旅行保険や現地通貨の手配についてのアドバイス",
-    "・オンライン英会話スクールの特徴比較表\n・各スクールの評価と口コミのまとめ\n・キャンペーン情報と割引クーポンの一覧",
-    "・スマートフォンの性能比較表とランキング\n・各スマートフォンの特徴と利点の紹介\n・ユーザーからの評価とレビューのまとめ",
-    "・家庭のセキュリティ対策についてのアドバイス\n・防犯カメラやセキュリティシステムの選び方と設置のポイント\n・防犯対策グッズの紹介と比較表"
+    "ダミー文章",
+    "ダミー文章",
+    "ダミー文章",
   ];
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={
-        <ListSubheader id="nested-list-subheader" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', color: '#ffffff', backgroundColor: "#dc143c"}}>
-          訪問したウェブページ
+        <ListSubheader id="nested-list-subheader" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', color: '#ffffff', backgroundColor: "#CCCCCC"}}>
+          XXXXXサービス
         </ListSubheader>
       }
     >
