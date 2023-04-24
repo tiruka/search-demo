@@ -83,7 +83,12 @@ export default function Index() {
               </Button>
             </Grid>
           </Grid>
-          {status !== "history" ? ( <><ChatCards /><ResultCards/></>) : (
+          {status !== "history" ? (
+          <>
+            <Typography sx={{ mt: 1, mb: 3 }} >解釈結果</Typography>
+            <ChatCards /><ResultCards/>
+          </>
+          ) : (
             <div>
               <Tip />
               <Grid container alignItems="center" justify="center" direction="column" >
